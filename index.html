@@ -167,6 +167,7 @@
             margin-top: 0;
             background: #f7f4ee;
             padding: 0.7rem 0.7rem 0.55rem;
+            container-type: inline-size;
             box-shadow: 4px 5px 0 rgba(60, 36, 12, 0.2);
             transform: rotate(2.5deg);
         }
@@ -190,9 +191,9 @@
             text-align: center;
             line-height: 1.05;
         }
-        .polaroid figcaption span:nth-child(1) { font-size: 1.95rem; }
-        .polaroid figcaption span:nth-child(2) { font-size: 1.42rem; }
-        .polaroid figcaption span:nth-child(3) { font-size: 1.55rem; }
+        .polaroid figcaption span:nth-child(1) { font-size: clamp(1.45rem, 12cqi, 1.95rem); }
+        .polaroid figcaption span:nth-child(2) { font-size: clamp(1.02rem, 8.6cqi, 1.42rem); }
+        .polaroid figcaption span:nth-child(3) { font-size: clamp(1.15rem, 10.2cqi, 1.55rem); }
         .sticky {
             position: relative;
             z-index: 2;
