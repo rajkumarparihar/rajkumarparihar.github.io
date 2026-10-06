@@ -153,9 +153,18 @@
             transform: rotate(-8deg);
             background: rgba(244, 239, 228, 0.6);
         }
-        .photo-col { position: relative; display: flex; justify-content: center; padding-top: 1.5rem; }
+        .photo-col {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.6rem;
+        }
         .polaroid {
-            width: min(250px, 100%);
+            position: relative;
+            z-index: 1;
+            width: min(260px, 100%);
+            margin-top: 0;
             background: #f7f4ee;
             padding: 0.7rem 0.7rem 2.6rem;
             box-shadow: 4px 5px 0 rgba(60, 36, 12, 0.2);
@@ -163,9 +172,11 @@
         }
         .polaroid img {
             width: 100%;
-            height: 270px;
-            object-fit: cover;
-            object-position: center 18%;
+            height: auto;
+            aspect-ratio: 1577 / 1629;
+            object-fit: contain;
+            object-position: center center;
+            background: #12315f;
         }
         .polaroid figcaption {
             font-family: Caveat, cursive;
@@ -174,16 +185,17 @@
             margin-top: 0.35rem;
         }
         .sticky {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 132px;
+            position: relative;
+            z-index: 2;
+            align-self: flex-start;
+            width: 190px;
+            margin: 0.4rem 0 0 0.2rem;
             background: #f6e98a;
             padding: 0.7rem 0.75rem;
             font-family: Caveat, cursive;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             line-height: 1.15;
-            transform: rotate(4deg);
+            transform: rotate(-6deg);
             box-shadow: 2px 2px 0 rgba(60, 36, 12, 0.12);
         }
 
@@ -299,9 +311,10 @@
         @media (max-width: 800px) {
             .topbar { align-items: flex-start; flex-direction: column; }
             .profile, .trail, .exhibits, .contact-grid, .posting, .two { grid-template-columns: 1fr; }
-            .trail .card, .polaroid, .tilt-left, .tilt-right { transform: none; margin-top: 0; }
+            .trail .card, .tilt-left, .tilt-right { transform: none; }
+            .polaroid { transform: none; }
             .thread { display: none; }
-            .sticky { position: static; transform: rotate(1deg); margin-bottom: 0.8rem; }
+            .sticky { position: static; display: block; transform: rotate(-2deg); margin: 0 0 0.4rem; }
             .stamp { position: static; display: inline-block; margin-top: 0.6rem; }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -313,7 +326,7 @@
     <header class="topbar">
         <a class="case-id" href="#top">CASE Nº 2026-RKP <span>THE OPEN LEDGER</span></a>
         <nav class="nav" aria-label="Primary">
-            <a href="#profile">SUBTEXT</a>
+            <a href="#profile">THE SUBJECT</a>
             <a href="#record">RECORD</a>
             <a href="#trail">THE TRAIL</a>
             <a href="#exhibits">EXHIBITS</a>
@@ -342,11 +355,11 @@
                 <span class="stamp">OPEN FILE</span>
             </article>
             <div class="photo-col">
-                <p class="sticky">scroll the board. the file gets more specific.</p>
+                <p class="sticky">Photo on file from Scheller College of Business. The badge matches the name.</p>
                 <figure class="polaroid">
                     <span class="pin" aria-hidden="true"></span>
-                    <img src="Headshot.jpg" alt="Portrait of Raj Kumar Parihar">
-                    <figcaption>the subject — Atlanta</figcaption>
+                    <img src="portrait.jpg" alt="Raj Kumar Parihar at Georgia Tech Scheller College of Business">
+                    <figcaption>the subject — Scheller</figcaption>
                 </figure>
             </div>
         </section>
