@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj Kumar Parihar — Data Analyst</title>
-    <meta name="description" content="Portfolio of Raj Kumar Parihar, a data analyst and accounting consultant based in the Atlanta area. Georgia Tech M.S. in Analytics, financial analytics, and hackathon work.">
+    <title>Case Nº 2026-RKP — Raj Kumar Parihar</title>
+    <meta name="description" content="Case file for Raj Kumar Parihar, data analyst and accounting consultant in Atlanta. M.S. in Analytics at Georgia Tech, financial analytics projects, and fifteen years of operations work.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #eef3ff;
-            --muted: #c5d0ea;
-            --faint: #93a3c7;
-            --cyan: #9ae7ff;
-            --gold: #f3d7a6;
-            --line: rgba(190, 214, 255, 0.18);
-            --card: rgba(8, 14, 34, 0.72);
+            --ink: #1c140f;
+            --red: #b42318;
+            --paper: #f4efe4;
+            --paper-edge: #e3d8c4;
+            --cork: #c6a15f;
+            --bar: #241c16;
+            --cream: #f6f0e4;
         }
 
         * { box-sizing: border-box; }
@@ -24,548 +24,543 @@
         body {
             margin: 0;
             color: var(--ink);
-            font-family: Figtree, "Segoe UI", sans-serif;
-            background: #050712;
-            line-height: 1.6;
+            font-family: "Courier Prime", "Courier New", monospace;
+            background-color: var(--cork);
+            background-image:
+                radial-gradient(circle at 12% 18%, rgba(255, 248, 230, 0.18) 0 1px, transparent 1.6px),
+                radial-gradient(circle at 68% 42%, rgba(70, 42, 16, 0.16) 0 1px, transparent 1.8px),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1.4px),
+                linear-gradient(160deg, #d8bc86 0%, #c6a15f 42%, #b48a49 100%);
+            background-size: 6px 6px, 9px 9px, 13px 13px, auto;
+            line-height: 1.45;
         }
-        img { max-width: 100%; display: block; }
         a { color: inherit; }
+        img { max-width: 100%; display: block; }
 
-        .sky {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background:
-                radial-gradient(ellipse 80% 50% at 15% 10%, rgba(88, 42, 140, 0.45), transparent 60%),
-                radial-gradient(ellipse 55% 40% at 85% 20%, rgba(20, 70, 140, 0.4), transparent 62%),
-                radial-gradient(ellipse 70% 45% at 60% 85%, rgba(120, 40, 90, 0.28), transparent 60%),
-                radial-gradient(ellipse 120% 30% at 50% 42%, rgba(180, 190, 255, 0.08), transparent 70%),
-                #050712;
-        }
-        .sky::after {
-            content: "";
-            position: absolute;
-            inset: -20% -10%;
-            background: linear-gradient(115deg, transparent 36%, rgba(214, 226, 255, 0.07) 48%, rgba(140, 170, 255, 0.05) 52%, transparent 64%);
-            transform: rotate(-8deg);
-        }
-        #starfield {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .wrap {
-            position: relative;
-            z-index: 1;
-            width: min(1080px, calc(100% - 2rem));
-            margin: 0 auto;
-        }
-
-        .nav {
+        .topbar {
             position: sticky;
             top: 0;
-            z-index: 5;
+            z-index: 20;
             display: flex;
-            align-items: center;
             justify-content: space-between;
             gap: 1rem;
-            padding: 0.9rem 0;
-            background: linear-gradient(to bottom, rgba(5, 7, 18, 0.92), rgba(5, 7, 18, 0.72) 70%, transparent);
-            backdrop-filter: blur(8px);
-        }
-        .mark {
-            font-family: Syne, sans-serif;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-decoration: none;
-            color: var(--gold);
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.25rem;
             align-items: center;
+            padding: 0.75rem 1.25rem;
+            background: var(--bar);
+            color: var(--cream);
         }
-        .nav-links a {
+        .case-id {
             text-decoration: none;
-            color: var(--muted);
+            font-family: "Special Elite", "Courier New", monospace;
+            letter-spacing: 0.04em;
+            color: #f0c7c3;
             font-size: 0.95rem;
         }
-        .nav-links a:hover,
-        .nav-links a:focus-visible { color: var(--cyan); }
-        .menu-btn {
-            display: none;
-            background: transparent;
+        .case-id span { color: var(--cream); margin-left: 0.45rem; }
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 0.4rem;
+        }
+        .nav a {
+            text-decoration: none;
+            background: var(--cream);
             color: var(--ink);
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            padding: 0.4rem 0.8rem;
-            font: inherit;
+            border: 2px solid var(--red);
+            padding: 0.28rem 0.5rem;
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+        }
+        .nav a:hover, .nav a:focus-visible { background: #fff; }
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 2px solid var(--red);
+            outline-offset: 2px;
         }
 
-        .hero {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 2.5rem;
-            align-items: center;
-            padding: 3.5rem 0 4.5rem;
-        }
-        .portrait {
-            width: 210px;
-            height: 210px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center 18%;
-            border: 2px solid rgba(243, 215, 166, 0.85);
-            box-shadow:
-                0 0 0 10px rgba(154, 231, 255, 0.08),
-                0 0 40px rgba(120, 80, 200, 0.45);
-        }
-        .eyebrow {
-            margin: 0 0 0.4rem;
-            color: var(--cyan);
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-            font-weight: 700;
+        main { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; padding: 2.2rem 0 4rem; }
+
+        .hero { text-align: center; padding: 1.4rem 0 2rem; }
+        .hero p { margin: 0.2rem 0; }
+        .kicker {
+            color: var(--red);
+            font-family: "Special Elite", monospace;
+            letter-spacing: 0.14em;
+            font-size: 1.05rem;
         }
         h1 {
-            margin: 0;
-            font-family: Syne, sans-serif;
-            font-size: clamp(2.6rem, 6vw, 4.6rem);
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-        }
-        .role {
-            margin: 0.9rem 0 0;
-            color: var(--gold);
-            font-size: 1.25rem;
-            font-weight: 600;
-        }
-        .lede {
-            max-width: 42rem;
-            color: var(--muted);
-            font-size: 1.08rem;
-        }
-        .actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1.4rem;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            border-radius: 999px;
-            padding: 0.75rem 1.15rem;
-            font-weight: 700;
-        }
-        .btn-primary {
-            background: linear-gradient(180deg, #d7f6ff, #7fd4ef);
-            color: #071018;
-        }
-        .btn-ghost {
-            border: 1px solid var(--line);
-            color: var(--ink);
-            background: rgba(8, 14, 34, 0.45);
-        }
-        .btn:hover { transform: translateY(-1px); }
-        .btn:focus-visible, a:focus-visible, button:focus-visible {
-            outline: 2px solid var(--cyan);
-            outline-offset: 3px;
-        }
-
-        section { padding: 1.2rem 0 3.2rem; }
-        h2 {
-            margin: 0 0 1.2rem;
-            font-family: Syne, sans-serif;
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            letter-spacing: -0.03em;
-        }
-
-        .grid {
-            display: grid;
-            gap: 1rem;
-        }
-        .cards-3 { grid-template-columns: repeat(3, 1fr); }
-        .cards-2 { grid-template-columns: repeat(2, 1fr); }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 1.15rem 1.2rem 1.2rem;
-            backdrop-filter: blur(8px);
-        }
-        .card h3 {
-            margin: 0 0 0.35rem;
-            font-size: 1.08rem;
-            line-height: 1.3;
-        }
-        .card p { margin: 0.35rem 0 0; color: var(--muted); }
-        .meta {
-            color: var(--gold);
-            font-size: 0.86rem;
-            font-weight: 700;
+            margin: 0.35rem 0 0.2rem;
+            font-family: "Special Elite", monospace;
+            font-size: clamp(2.3rem, 6vw, 4.4rem);
+            font-weight: 400;
             letter-spacing: 0.02em;
+            line-height: 0.95;
         }
-        .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.8rem; }
-        .chip {
-            border: 1px solid rgba(154, 231, 255, 0.28);
-            color: var(--cyan);
-            border-radius: 999px;
-            padding: 0.15rem 0.55rem;
-            font-size: 0.78rem;
+        .subject { font-size: 1.15rem; letter-spacing: 0.04em; }
+        .disciplines {
+            margin-top: 0.7rem !important;
+            color: var(--red);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            font-size: 0.92rem;
         }
 
-        .timeline { display: grid; gap: 0.8rem; }
-        .job {
+        .profile {
             display: grid;
-            grid-template-columns: 11.5rem 1fr;
-            gap: 1rem;
-            padding: 0.95rem 0;
-            border-top: 1px solid var(--line);
+            grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.7fr);
+            gap: 1.6rem;
+            align-items: start;
+            margin-bottom: 3rem;
         }
-        .when { color: var(--faint); font-size: 0.92rem; }
-        .where { color: var(--muted); margin: 0.15rem 0 0; }
+        .paper {
+            position: relative;
+            background: var(--paper);
+            border: 1px solid var(--paper-edge);
+            box-shadow: 3px 4px 0 rgba(60, 36, 12, 0.18);
+            padding: 1.3rem 1.25rem 1.4rem;
+        }
+        .pin {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            width: 16px;
+            height: 16px;
+            margin-left: -8px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, #ffb1ab, #c0392b 55%, #7d1a14);
+            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.28);
+        }
+        .paper h2, .folder h2 {
+            margin: 0 0 0.8rem;
+            font-family: "Special Elite", monospace;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            font-size: 1.7rem;
+        }
+        .field { margin: 0 0 0.7rem; }
+        .field strong { display: block; letter-spacing: 0.08em; font-size: 0.82rem; }
+        .stamp {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            border: 3px solid var(--red);
+            color: var(--red);
+            padding: 0.2rem 0.45rem;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            transform: rotate(-8deg);
+            background: rgba(244, 239, 228, 0.6);
+        }
+        .photo-col { position: relative; display: flex; justify-content: center; padding-top: 1.5rem; }
+        .polaroid {
+            width: min(250px, 100%);
+            background: #f7f4ee;
+            padding: 0.7rem 0.7rem 2.6rem;
+            box-shadow: 4px 5px 0 rgba(60, 36, 12, 0.2);
+            transform: rotate(2.5deg);
+        }
+        .polaroid img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            object-position: center 18%;
+        }
+        .polaroid figcaption {
+            font-family: Caveat, cursive;
+            font-size: 1.45rem;
+            text-align: center;
+            margin-top: 0.35rem;
+        }
+        .sticky {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 132px;
+            background: #f6e98a;
+            padding: 0.7rem 0.75rem;
+            font-family: Caveat, cursive;
+            font-size: 1.25rem;
+            line-height: 1.15;
+            transform: rotate(4deg);
+            box-shadow: 2px 2px 0 rgba(60, 36, 12, 0.12);
+        }
 
-        .skill-list {
-            margin: 0.4rem 0 0;
-            padding-left: 1.1rem;
-            color: var(--muted);
+        .folder { margin: 2.6rem 0 1rem; }
+        .tab {
+            display: inline-block;
+            background: var(--paper);
+            border: 1px solid var(--paper-edge);
+            border-bottom: none;
+            padding: 0.35rem 0.9rem 0.15rem;
+            font-family: "Special Elite", monospace;
+            font-size: 1.55rem;
         }
-        .skill-list li + li { margin-top: 0.35rem; }
+        .folder p { margin: 0.35rem 0 0; letter-spacing: 0.06em; font-size: 0.86rem; }
+
+        .record { margin-bottom: 0.4rem; }
+        .posting {
+            display: grid;
+            grid-template-columns: 9.5rem 1fr;
+            gap: 0.6rem;
+            padding: 0.55rem 0;
+            border-top: 1px dashed #c9bba4;
+        }
+        .posting time { color: #5c4a38; }
+        .active {
+            display: inline-block;
+            margin-left: 0.35rem;
+            color: var(--red);
+            border: 1px solid var(--red);
+            padding: 0 0.25rem;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            vertical-align: middle;
+        }
+
+        .trail {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.7rem 2rem;
+            margin-top: 0.6rem;
+        }
+        .thread {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .card {
+            position: relative;
+            z-index: 1;
+            background: var(--paper);
+            border: 1px solid var(--paper-edge);
+            box-shadow: 3px 4px 0 rgba(60, 36, 12, 0.16);
+            padding: 1.15rem 1rem 1rem;
+        }
+        .trail .card:nth-child(odd) { transform: rotate(-1.1deg); }
+        .trail .card:nth-child(even) { transform: rotate(1deg); margin-top: 1.1rem; }
+        .card h3 { margin: 0.35rem 0; font-size: 1.12rem; line-height: 1.25; }
+        .meta { margin: 0; color: #6a5644; font-size: 0.86rem; }
+        .exhibit {
+            color: var(--red);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+        }
+        .card p { margin: 0.4rem 0 0; }
+
+        .exhibits, .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+        .contact-grid { grid-template-columns: 1.4fr 0.8fr; align-items: start; }
+        .tilt-left { transform: rotate(-1deg); }
+        .tilt-right { transform: rotate(1.2deg); }
+
+        form { display: grid; gap: 0.7rem; }
+        label { display: grid; gap: 0.25rem; font-size: 0.92rem; }
+        .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+        input, select, textarea {
+            font: inherit;
+            background: #fffdf8;
+            border: 1px solid #c9bba4;
+            padding: 0.45rem 0.5rem;
+            color: var(--ink);
+        }
+        textarea { min-height: 7rem; resize: vertical; }
+        button {
+            justify-self: start;
+            font: inherit;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            background: var(--cream);
+            color: var(--ink);
+            border: 2px solid var(--red);
+            padding: 0.55rem 0.8rem;
+            cursor: pointer;
+        }
+        button:hover { background: #fff; }
+        .channels { margin: 0.8rem 0 0; }
+        .channels a { color: var(--red); font-weight: 700; }
 
         footer {
-            border-top: 1px solid var(--line);
-            padding: 2.2rem 0 3rem;
-        }
-        .contact-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem 1.4rem;
-        }
-        .contact-row a {
-            color: var(--cyan);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .contact-row a:hover { text-decoration: underline; }
-        .fine {
-            margin-top: 1.6rem;
-            color: var(--faint);
-            font-size: 0.88rem;
+            width: min(1080px, calc(100% - 2rem));
+            margin: 0 auto 2rem;
+            color: #3d2c1c;
+            font-size: 0.85rem;
         }
 
         @media (max-width: 800px) {
-            .hero { grid-template-columns: 1fr; gap: 1.2rem; padding-top: 1.6rem; }
-            .portrait { width: 148px; height: 148px; }
-            .cards-3, .cards-2, .job { grid-template-columns: 1fr; }
-            .menu-btn { display: inline-flex; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 3.4rem;
-                right: 0;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.7rem;
-                padding: 0.9rem 1rem;
-                background: rgba(8, 12, 28, 0.96);
-                border: 1px solid var(--line);
-                border-radius: 14px;
-                min-width: 11rem;
-            }
-            .nav-links.open { display: flex; }
+            .topbar { align-items: flex-start; flex-direction: column; }
+            .profile, .trail, .exhibits, .contact-grid, .posting, .two { grid-template-columns: 1fr; }
+            .trail .card, .polaroid, .tilt-left, .tilt-right { transform: none; margin-top: 0; }
+            .thread { display: none; }
+            .sticky { position: static; transform: rotate(1deg); margin-bottom: 0.8rem; }
+            .stamp { position: static; display: inline-block; margin-top: 0.6rem; }
         }
-
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
-            .btn:hover { transform: none; }
         }
     </style>
 </head>
 <body>
-    <div class="sky" aria-hidden="true"></div>
-    <canvas id="starfield" aria-hidden="true"></canvas>
+    <header class="topbar">
+        <a class="case-id" href="#top">CASE Nº 2026-RKP <span>THE OPEN LEDGER</span></a>
+        <nav class="nav" aria-label="Primary">
+            <a href="#profile">SUBTEXT</a>
+            <a href="#record">RECORD</a>
+            <a href="#trail">THE TRAIL</a>
+            <a href="#exhibits">EXHIBITS</a>
+            <a href="#skills">M.O.</a>
+            <a href="#contact">TIP LINE</a>
+        </nav>
+    </header>
 
-    <div class="wrap">
-        <header class="nav">
-            <a class="mark" href="#top">RKP</a>
-            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-            <nav id="site-nav" class="nav-links" aria-label="Primary">
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </header>
+    <main id="top">
+        <section class="hero">
+            <p class="kicker">CASE Nº 2026-RKP</p>
+            <h1>THE OPEN LEDGER</h1>
+            <p class="subject">SUBJECT: RAJ KUMAR PARIHAR</p>
+            <p class="disciplines">DATA ANALYTICS • ACCOUNTING • FINANCE • RESEARCH</p>
+        </section>
 
-        <main id="top">
-            <section class="hero">
-                <img class="portrait" src="Headshot.jpg" alt="Portrait of Raj Kumar Parihar">
-                <div>
-                    <p class="eyebrow">Atlanta, Georgia</p>
-                    <h1>Raj Kumar Parihar</h1>
-                    <p class="role">Data Analyst &amp; Accounting Consultant</p>
-                    <p class="lede">Data analyst and accounting consultant with 15+ years of experience working with cross-functional teams on business operations and practical solutions. I use analytics and management practice to help communities and organizations work through real problems, and I am looking for a data analytics or research role as methods change in the age of AI.</p>
-                    <div class="actions">
-                        <a class="btn btn-primary" href="#projects">View projects</a>
-                        <a class="btn btn-ghost" href="#contact">Contact</a>
+        <section class="profile" id="profile">
+            <article class="paper">
+                <span class="pin" aria-hidden="true"></span>
+                <h2>SUBJECT PROFILE</h2>
+                <p class="field"><strong>NAME</strong> Raj Kumar Parihar</p>
+                <p class="field"><strong>BASE</strong> Atlanta, Georgia</p>
+                <p class="field"><strong>STATUS</strong> M.S. in Analytics, Georgia Institute of Technology, expected Dec 2026. GPA 3.23 / 4.0. MBA in Human Resource Management, Sikkim Manipal University, 2016. B.S. in Mathematics, Maharshi Dayanand Saraswati University, 2005.</p>
+                <p class="field"><strong>KNOWN BEHAVIOR</strong> Data analyst and accounting consultant with 15+ years beside cross-functional teams. Uses analytics and management practice to turn surrounding problems into something a business can act on. Looking for a data analytics or research role while older methods keep getting automated.</p>
+                <p class="field"><strong>RANGE OBSERVED</strong> Python, R, SQL, advanced Excel, forecasting, clustering, FinBERT, financial analysis, and Six Sigma.</p>
+                <span class="stamp">OPEN FILE</span>
+            </article>
+            <div class="photo-col">
+                <p class="sticky">scroll the board. the file gets more specific.</p>
+                <figure class="polaroid">
+                    <span class="pin" aria-hidden="true"></span>
+                    <img src="Headshot.jpg" alt="Portrait of Raj Kumar Parihar">
+                    <figcaption>the subject — Atlanta</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="record">
+            <div class="folder">
+                <h2 class="tab">SERVICE RECORD</h2>
+                <p>ASSIGNMENTS · WHERE THE FILE WAS LAST SEEN</p>
+            </div>
+            <article class="paper record">
+                <span class="pin" aria-hidden="true"></span>
+                <div class="posting">
+                    <time>Aug 2024 – Present</time>
+                    <div>
+                        <strong>Data Analytics Consultant</strong>
+                        <span class="active">ACTIVE</span>
+                        <div>Open Source Fintech Inc. · Remote, project based</div>
                     </div>
                 </div>
-            </section>
-
-            <section id="experience">
-                <h2>Experience</h2>
-                <div class="timeline">
-                    <article class="job">
-                        <p class="when">Aug 2024 – Present</p>
-                        <div>
-                            <h3>Data Analytics Consultant</h3>
-                            <p class="where">Open Source Fintech Inc. · Remote, project based</p>
-                        </div>
-                    </article>
-                    <article class="job">
-                        <p class="when">Nov 2024 – Present</p>
-                        <div>
-                            <h3>Accounts Consultant</h3>
-                            <p class="where">HK Tax &amp; Accounting Inc · Decatur, GA</p>
-                        </div>
-                    </article>
-                    <article class="job">
-                        <p class="when">Mar 2023 – Nov 2024</p>
-                        <div>
-                            <h3>Accounts &amp; Payroll Consultant</h3>
-                            <p class="where">HK Business Services LLC · Decatur, GA</p>
-                        </div>
-                    </article>
-                    <article class="job">
-                        <p class="when">Apr 2018 – Apr 2021</p>
-                        <div>
-                            <h3>Management Consultant</h3>
-                            <p class="where">Diveprom Consultants · Vadodara, India</p>
-                        </div>
-                    </article>
-                    <article class="job">
-                        <p class="when">Apr 2011 – Dec 2014</p>
-                        <div>
-                            <h3>HR Project Manager</h3>
-                            <p class="where">Sodexo · Luanda, Angola</p>
-                        </div>
-                    </article>
+                <div class="posting">
+                    <time>Nov 2024 – Present</time>
+                    <div>
+                        <strong>Accounts Consultant</strong>
+                        <span class="active">ACTIVE</span>
+                        <div>HK Tax &amp; Accounting Inc · Decatur, GA</div>
+                    </div>
                 </div>
-            </section>
-
-            <section id="projects">
-                <h2>Projects &amp; hackathons</h2>
-                <div class="grid cards-2">
-                    <article class="card">
-                        <p class="meta">Summer 2026 · Practicum</p>
-                        <h3>Personalized Financial Insights &amp; Spend Analytics</h3>
-                        <p>Practicum sponsored by Candescent, focused on personalized financial insights and spend analytics.</p>
-                        <div class="chips"><span class="chip">Finance</span><span class="chip">Analytics</span></div>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Spring 2026 · Georgia Tech</p>
-                        <h3>Operational Forecasting of Financial Exposure</h3>
-                        <p>Class project on forecasting financial exposure from operational data.</p>
-                        <div class="chips"><span class="chip">Forecasting</span><span class="chip">Finance</span></div>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Spring 2026 · Georgia Tech</p>
-                        <h3>Market Mood and Volatility Analytics</h3>
-                        <p>Class project studying market mood and volatility for S&amp;P 500 firms.</p>
-                        <div class="chips"><span class="chip">NLP</span><span class="chip">Markets</span></div>
-                    </article>
-                    <article class="card">
-                        <p class="meta">SproutGT 2026 · Georgia Tech</p>
-                        <h3>Predictive Runway Modeling</h3>
-                        <p>Hackathon project on predictive runway modeling through peer cohort analysis.</p>
-                        <div class="chips"><span class="chip">Hackathon</span><span class="chip">Modeling</span></div>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Hacklytics 2026 · Georgia Tech</p>
-                        <h3>Peach State Health Scores</h3>
-                        <p>Hackathon project on Peach State health scores.</p>
-                        <div class="chips"><span class="chip">Hackathon</span><span class="chip">Health</span></div>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Yamaha Motors · Georgia Tech</p>
-                        <h3>YR-Blue Carbon Reduction Initiative</h3>
-                        <p>Carbon Reduction Challenge project sponsored by Yamaha Motors.</p>
-                        <div class="chips"><span class="chip">Sustainability</span><span class="chip">Sponsored</span></div>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Health AI Datathon 2026 · Emory</p>
-                        <h3>Multi-model Cancer Subtyping</h3>
-                        <p>Datathon project on cancer subtyping with multiple models.</p>
-                        <div class="chips"><span class="chip">Health AI</span><span class="chip">Emory</span></div>
-                    </article>
-                    <article class="card">
-                        <p class="meta">Summer 2026 · Georgia Tech</p>
-                        <h3>Traffic Corridor Simulation</h3>
-                        <p>Class project simulating traffic along a corridor.</p>
-                        <div class="chips"><span class="chip">Simulation</span><span class="chip">Operations</span></div>
-                    </article>
+                <div class="posting">
+                    <time>Mar 2023 – Nov 2024</time>
+                    <div>
+                        <strong>Accounts &amp; Payroll Consultant</strong>
+                        <div>HK Business Services LLC · Decatur, GA</div>
+                    </div>
                 </div>
-            </section>
-
-            <section id="skills">
-                <h2>Skills</h2>
-                <div class="grid cards-3">
-                    <article class="card">
-                        <h3>Programming &amp; analytics</h3>
-                        <ul class="skill-list">
-                            <li>Python, R, and SQL</li>
-                            <li>Advanced Excel, including VBA and pivot tables</li>
-                        </ul>
-                    </article>
-                    <article class="card">
-                        <h3>Machine learning &amp; NLP</h3>
-                        <ul class="skill-list">
-                            <li>Random Forest, KNN, and clustering</li>
-                            <li>FinBERT and LLM entity resolution</li>
-                            <li>Predictive analytics</li>
-                        </ul>
-                    </article>
-                    <article class="card">
-                        <h3>Methods</h3>
-                        <ul class="skill-list">
-                            <li>Six Sigma Green Belt</li>
-                            <li>Business process analysis</li>
-                            <li>Financial analysis and A/B testing</li>
-                        </ul>
-                    </article>
+                <div class="posting">
+                    <time>Apr 2018 – Apr 2021</time>
+                    <div>
+                        <strong>Management Consultant</strong>
+                        <div>Diveprom Consultants · Vadodara, India</div>
+                    </div>
                 </div>
-            </section>
-
-            <section id="education">
-                <h2>Education</h2>
-                <div class="timeline">
-                    <article class="job">
-                        <p class="when">Dec 2026</p>
-                        <div>
-                            <h3>M.S. in Analytics</h3>
-                            <p class="where">Georgia Institute of Technology, Atlanta · GPA 3.23 / 4.0</p>
-                        </div>
-                    </article>
-                    <article class="job">
-                        <p class="when">Jun 2016</p>
-                        <div>
-                            <h3>MBA, Human Resource Management</h3>
-                            <p class="where">Sikkim Manipal University, Gangtok, Sikkim, India</p>
-                        </div>
-                    </article>
-                    <article class="job">
-                        <p class="when">May 2005</p>
-                        <div>
-                            <h3>B.S. Mathematics</h3>
-                            <p class="where">Maharshi Dayanand Saraswati University, Ajmer, Rajasthan, India</p>
-                        </div>
-                    </article>
+                <div class="posting">
+                    <time>Apr 2011 – Dec 2014</time>
+                    <div>
+                        <strong>HR Project Manager</strong>
+                        <div>Sodexo · Luanda, Angola</div>
+                    </div>
                 </div>
-            </section>
+            </article>
+        </section>
 
-            <section id="leadership">
-                <h2>Leadership</h2>
-                <article class="card">
-                    <p class="meta">Nov 2025 · Panelist</p>
-                    <h3>Inaugural OMSA Conference, Georgia Tech</h3>
-                    <p>Presented on advanced financial analytics and independent research on peer-based forecasting.</p>
-                </article>
-                <article class="card" style="margin-top: 1rem;">
-                    <h3>Languages &amp; interests</h3>
-                    <p>Fluent in English, Hindi, and Gujarati. Working proficiency in French and basic proficiency in Portuguese. Interested in hackathons, travel, and the places and food of different cultures.</p>
-                </article>
-            </section>
-        </main>
-
-        <footer id="contact">
-            <h2>Contact</h2>
-            <p class="lede">Open to data analytics and research roles, in Atlanta and remote.</p>
-            <div class="contact-row">
-                <a href="mailto:rajkumar.parihar@gmail.com">rajkumar.parihar@gmail.com</a>
-                <a href="tel:+14704186238">(470) 418-6238</a>
-                <a href="https://www.linkedin.com/in/raj-kumar-parihar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/rajkumarparihar" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <section id="trail">
+            <div class="folder">
+                <h2 class="tab">THE TRAIL</h2>
+                <p>PROJECTS · EACH FILE OPENED THE NEXT ONE</p>
             </div>
-            <p class="fine">&copy; 2026 Raj Kumar Parihar</p>
-        </footer>
-    </div>
+            <div class="trail">
+                <svg class="thread" viewBox="0 0 1000 1500" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M250 70 C 430 90, 620 180, 760 230 C 900 280, 820 470, 740 540 C 640 630, 300 760, 250 860 C 200 960, 420 1120, 760 1180 C 920 1210, 700 1400, 480 1460" fill="none" stroke="#b42318" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 01 · SUMMER 2026</p>
+                    <h3>Personalized Financial Insights &amp; Spend Analytics</h3>
+                    <p class="meta">Practicum sponsored by Candescent</p>
+                    <p>A practicum on personalized financial insights and how spending actually moves.</p>
+                </article>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 02 · SPRING 2026</p>
+                    <h3>Operational Forecasting of Financial Exposure</h3>
+                    <p class="meta">Class project · Georgia Tech</p>
+                    <p>Forecasting financial exposure from the way operations run.</p>
+                </article>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 03 · SPRING 2026</p>
+                    <h3>Market Mood and Volatility Analytics</h3>
+                    <p class="meta">Class project · Georgia Tech · S&amp;P 500 firms</p>
+                    <p>Reading market mood beside volatility for large public firms.</p>
+                </article>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 04 · SPROUTGT 2026</p>
+                    <h3>Predictive Runway Modeling</h3>
+                    <p class="meta">Hackathon · Georgia Tech</p>
+                    <p>Peer cohort analysis used to model runway.</p>
+                </article>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 05 · HACKLYTICS 2026</p>
+                    <h3>Peach State Health Scores</h3>
+                    <p class="meta">Hackathon · Georgia Tech</p>
+                    <p>A health-score case built during Hacklytics.</p>
+                </article>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 06 · YAMAHA MOTORS</p>
+                    <h3>YR-Blue Carbon Reduction Initiative</h3>
+                    <p class="meta">Carbon Reduction Challenge · Georgia Tech</p>
+                    <p>Sponsored work on carbon reduction for Yamaha Motors.</p>
+                </article>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 07 · EMORY 2026</p>
+                    <h3>Multi-model Cancer Subtyping</h3>
+                    <p class="meta">Health AI Datathon · Emory University</p>
+                    <p>Several models compared on cancer subtypes.</p>
+                </article>
+                <article class="card">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 08 · SUMMER 2026</p>
+                    <h3>Traffic Corridor Simulation</h3>
+                    <p class="meta">Class project · Georgia Tech</p>
+                    <p>A simulation of flow along a traffic corridor.</p>
+                </article>
+            </div>
+        </section>
 
+        <section id="exhibits">
+            <div class="folder">
+                <h2 class="tab">EXHIBITS</h2>
+                <p>NOTES ADMITTED TO THE FILE</p>
+            </div>
+            <div class="exhibits">
+                <article class="paper tilt-left">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">NOV 2025 · PANEL</p>
+                    <h3>Inaugural OMSA Conference</h3>
+                    <p>Panelist at Georgia Tech on advanced financial analytics and independent research into peer-based forecasting.</p>
+                </article>
+                <article class="paper">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">LANGUAGES</p>
+                    <h3>What the subject speaks</h3>
+                    <p>Fluent in English, Hindi, and Gujarati. Working French. Basic Portuguese.</p>
+                </article>
+                <article class="paper tilt-right">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">OFF THE RECORD</p>
+                    <h3>Known interests</h3>
+                    <p>Hackathons, travel, and the places and food of other cultures.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="folder">
+                <h2 class="tab">MODUS OPERANDI</h2>
+                <p>METHODS ALREADY ON THE RECORD</p>
+            </div>
+            <article class="paper">
+                <span class="pin" aria-hidden="true"></span>
+                <p class="field"><strong>PROGRAMMING &amp; ANALYTICS</strong> Python, R, SQL, advanced Excel with VBA and pivot tables.</p>
+                <p class="field"><strong>MACHINE LEARNING &amp; NLP</strong> Random Forest, KNN, clustering, FinBERT, LLM entity resolution, predictive analytics.</p>
+                <p class="field"><strong>PRACTICE</strong> Six Sigma Green Belt, business process analysis, financial analysis, A/B testing.</p>
+                <span class="stamp">KNOWN METHODS</span>
+            </article>
+        </section>
+
+        <section id="contact">
+            <div class="folder">
+                <h2 class="tab">TIP LINE</h2>
+                <p>IF THE FILE SHOULD STAY OPEN</p>
+            </div>
+            <div class="contact-grid">
+                <article class="paper">
+                    <span class="pin" aria-hidden="true"></span>
+                    <h2>File a note</h2>
+                    <p>Looking for a data analyst who also keeps the books? Send the details.</p>
+                    <form id="tip-form">
+                        <div class="two">
+                            <label>First name <input name="first" type="text" required autocomplete="given-name"></label>
+                            <label>Last name <input name="last" type="text" required autocomplete="family-name"></label>
+                        </div>
+                        <label>Email <input name="email" type="email" required autocomplete="email"></label>
+                        <label>Nature of the note
+                            <select name="nature" required>
+                                <option value="">Select one</option>
+                                <option>Analytics role</option>
+                                <option>Research collaboration</option>
+                                <option>Accounting work</option>
+                                <option>Something else</option>
+                            </select>
+                        </label>
+                        <label>Statement <textarea name="statement" required></textarea></label>
+                        <button type="submit">FILE THE NOTE</button>
+                    </form>
+                </article>
+                <article class="paper tilt-right">
+                    <span class="pin" aria-hidden="true"></span>
+                    <h2>Known channels</h2>
+                    <p class="channels"><a href="mailto:rajkumar.parihar@gmail.com">rajkumar.parihar@gmail.com</a></p>
+                    <p class="channels"><a href="tel:+14704186238">(470) 418-6238</a></p>
+                    <p class="channels"><a href="https://www.linkedin.com/in/raj-kumar-parihar/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                    <p class="channels"><a href="https://github.com/rajkumarparihar" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                    <p>Atlanta and remote. Analytics and research roles both fit the file.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>&copy; 2026 Raj Kumar Parihar</footer>
     <script>
-        (function () {
-            var button = document.querySelector(".menu-btn");
-            var nav = document.getElementById("site-nav");
-            button.addEventListener("click", function () {
-                var open = nav.classList.toggle("open");
-                button.setAttribute("aria-expanded", open ? "true" : "false");
-            });
-            nav.querySelectorAll("a").forEach(function (link) {
-                link.addEventListener("click", function () {
-                    nav.classList.remove("open");
-                    button.setAttribute("aria-expanded", "false");
-                });
-            });
-
-            var canvas = document.getElementById("starfield");
-            var ctx = canvas.getContext("2d");
-            var stars = [];
-            var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-            function resize() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-
-            function seed() {
-                var count = Math.min(220, Math.floor(window.innerWidth / 7));
-                stars = [];
-                for (var i = 0; i < count; i++) {
-                    stars.push({
-                        x: Math.random(),
-                        y: Math.random(),
-                        r: Math.random() * 1.3 + 0.25,
-                        b: 0.35 + Math.random() * 0.65,
-                        drift: 0.00005 + Math.random() * 0.00025,
-                        phase: Math.random() * Math.PI * 2
-                    });
-                }
-            }
-
-            function paint(time) {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                for (var i = 0; i < stars.length; i++) {
-                    var star = stars[i];
-                    if (!reduce) {
-                        star.y -= star.drift;
-                        if (star.y < 0) star.y = 1;
-                    }
-                    var twinkle = reduce ? star.b : 0.45 + Math.abs(Math.sin(time * 0.001 + star.phase)) * 0.55;
-                    ctx.fillStyle = "rgba(236, 244, 255," + (star.b * twinkle).toFixed(3) + ")";
-                    ctx.beginPath();
-                    ctx.arc(star.x * canvas.width, star.y * canvas.height, star.r, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-                if (!reduce) requestAnimationFrame(paint);
-            }
-
-            resize();
-            seed();
-            paint(0);
-            window.addEventListener("resize", function () {
-                resize();
-                seed();
-                if (reduce) paint(0);
-            });
-        })();
+        document.getElementById("tip-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var data = new FormData(event.target);
+            var subject = "Case file note: " + data.get("nature");
+            var body = [
+                data.get("first") + " " + data.get("last"),
+                data.get("email"),
+                "",
+                data.get("statement")
+            ].join("\n");
+            window.location.href = "mailto:rajkumar.parihar@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        });
     </script>
 </body>
 </html>
