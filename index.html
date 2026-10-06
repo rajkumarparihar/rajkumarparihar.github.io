@@ -3,135 +3,569 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj Kumar Parihar - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Raj Kumar Parihar — Data Analyst</title>
+    <meta name="description" content="Portfolio of Raj Kumar Parihar, a data analyst and accounting consultant based in the Atlanta area. Georgia Tech computer science, financial analytics, and hackathon work.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom smooth scrolling */
+        :root {
+            --ink: #eef3ff;
+            --muted: #c5d0ea;
+            --faint: #93a3c7;
+            --cyan: #9ae7ff;
+            --gold: #f3d7a6;
+            --line: rgba(190, 214, 255, 0.18);
+            --card: rgba(8, 14, 34, 0.72);
+        }
+
+        * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            color: var(--ink);
+            font-family: Figtree, "Segoe UI", sans-serif;
+            background: #050712;
+            line-height: 1.6;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; }
+
+        .sky {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 80% 50% at 15% 10%, rgba(88, 42, 140, 0.45), transparent 60%),
+                radial-gradient(ellipse 55% 40% at 85% 20%, rgba(20, 70, 140, 0.4), transparent 62%),
+                radial-gradient(ellipse 70% 45% at 60% 85%, rgba(120, 40, 90, 0.28), transparent 60%),
+                radial-gradient(ellipse 120% 30% at 50% 42%, rgba(180, 190, 255, 0.08), transparent 70%),
+                #050712;
+        }
+        .sky::after {
+            content: "";
+            position: absolute;
+            inset: -20% -10%;
+            background: linear-gradient(115deg, transparent 36%, rgba(214, 226, 255, 0.07) 48%, rgba(140, 170, 255, 0.05) 52%, transparent 64%);
+            transform: rotate(-8deg);
+        }
+        #starfield {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            width: min(1080px, calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.9rem 0;
+            background: linear-gradient(to bottom, rgba(5, 7, 18, 0.92), rgba(5, 7, 18, 0.72) 70%, transparent);
+            backdrop-filter: blur(8px);
+        }
+        .mark {
+            font-family: Syne, sans-serif;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            color: var(--gold);
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus-visible { color: var(--cyan); }
+        .menu-btn {
+            display: none;
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 0.4rem 0.8rem;
+            font: inherit;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            padding: 3.5rem 0 4.5rem;
+        }
+        .portrait {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 18%;
+            border: 2px solid rgba(243, 215, 166, 0.85);
+            box-shadow:
+                0 0 0 10px rgba(154, 231, 255, 0.08),
+                0 0 40px rgba(120, 80, 200, 0.45);
+        }
+        .eyebrow {
+            margin: 0 0 0.4rem;
+            color: var(--cyan);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        h1 {
+            margin: 0;
+            font-family: Syne, sans-serif;
+            font-size: clamp(2.6rem, 6vw, 4.6rem);
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+        .role {
+            margin: 0.9rem 0 0;
+            color: var(--gold);
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .lede {
+            max-width: 42rem;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.4rem;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 0.75rem 1.15rem;
+            font-weight: 700;
+        }
+        .btn-primary {
+            background: linear-gradient(180deg, #d7f6ff, #7fd4ef);
+            color: #071018;
+        }
+        .btn-ghost {
+            border: 1px solid var(--line);
+            color: var(--ink);
+            background: rgba(8, 14, 34, 0.45);
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn:focus-visible, a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--cyan);
+            outline-offset: 3px;
+        }
+
+        section { padding: 1.2rem 0 3.2rem; }
+        h2 {
+            margin: 0 0 1.2rem;
+            font-family: Syne, sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            letter-spacing: -0.03em;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+        .cards-3 { grid-template-columns: repeat(3, 1fr); }
+        .cards-2 { grid-template-columns: repeat(2, 1fr); }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 1.15rem 1.2rem 1.2rem;
+            backdrop-filter: blur(8px);
+        }
+        .card h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.08rem;
+            line-height: 1.3;
+        }
+        .card p { margin: 0.35rem 0 0; color: var(--muted); }
+        .meta {
+            color: var(--gold);
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.8rem; }
+        .chip {
+            border: 1px solid rgba(154, 231, 255, 0.28);
+            color: var(--cyan);
+            border-radius: 999px;
+            padding: 0.15rem 0.55rem;
+            font-size: 0.78rem;
+        }
+
+        .timeline { display: grid; gap: 0.8rem; }
+        .job {
+            display: grid;
+            grid-template-columns: 11.5rem 1fr;
+            gap: 1rem;
+            padding: 0.95rem 0;
+            border-top: 1px solid var(--line);
+        }
+        .when { color: var(--faint); font-size: 0.92rem; }
+        .where { color: var(--muted); margin: 0.15rem 0 0; }
+
+        .skill-list {
+            margin: 0.4rem 0 0;
+            padding-left: 1.1rem;
+            color: var(--muted);
+        }
+        .skill-list li + li { margin-top: 0.35rem; }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 2.2rem 0 3rem;
+        }
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.4rem;
+        }
+        .contact-row a {
+            color: var(--cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-row a:hover { text-decoration: underline; }
+        .fine {
+            margin-top: 1.6rem;
+            color: var(--faint);
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 800px) {
+            .hero { grid-template-columns: 1fr; gap: 1.2rem; padding-top: 1.6rem; }
+            .portrait { width: 148px; height: 148px; }
+            .cards-3, .cards-2, .job { grid-template-columns: 1fr; }
+            .menu-btn { display: inline-flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 3.4rem;
+                right: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.7rem;
+                padding: 0.9rem 1rem;
+                background: rgba(8, 12, 28, 0.96);
+                border: 1px solid var(--line);
+                border-radius: 14px;
+                min-width: 11rem;
+            }
+            .nav-links.open { display: flex; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .btn:hover { transform: none; }
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+<body>
+    <div class="sky" aria-hidden="true"></div>
+    <canvas id="starfield" aria-hidden="true"></canvas>
 
-    <nav class="fixed w-full bg-white shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-blue-900">RKP</a>
-            <div class="space-x-6 hidden md:block">
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <div class="wrap">
+        <header class="nav">
+            <a class="mark" href="#top">RKP</a>
+            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav" class="nav-links" aria-label="Primary">
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
 
-    <section id="about" class="pt-32 pb-20 px-4">
-        <div class="max-w-4xl mx-auto text-center mt-10">
-            <img src="Headshot.jpg" alt="Raj Kumar Parihar" class="w-40 h-40 mx-auto rounded-full object-cover mb-6 shadow-lg border-4 border-white">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-6">Raj Kumar Parihar</h1>
-            <h2 class="text-2xl text-blue-700 font-semibold mb-6">Data & Business Analyst</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Results-driven MS Analytics candidate (Georgia Tech, Dec 2026) with 14+ years of business operations experience and proven expertise in data analytics, SQL, Python, and financial modeling.
-            </p>
-            <div class="flex justify-center space-x-4">
-                <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">View Projects</a>
-                <a href="#contact" class="bg-white border border-gray-300 text-gray-700 px-6 py-3 rounded-lg shadow-sm hover:bg-gray-50 transition">Contact Me</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-20 bg-white px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="p-6 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h3 class="text-xl font-semibold text-blue-800 mb-4">Programming & Analytics</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
-                        <li>R, SQL (MySQL, SQLite)</li>
-                        <li>Advanced Excel (VBA, Pivot Tables)</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h3 class="text-xl font-semibold text-blue-800 mb-4">Data & Visualization</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Tableau, Power BI</li>
-                        <li>Data Modeling, Statistical Analysis</li>
-                        <li>Predictive Analytics, A/B Testing</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition">
-                    <h3 class="text-xl font-semibold text-blue-800 mb-4">Methodologies & Cloud</h3>
-                    <ul class="list-disc list-inside text-gray-600 space-y-2">
-                        <li>Six Sigma Green Belt, Agile</li>
-                        <li>Data Warehousing, ETL Processes</li>
-                        <li>AWS Basics, PostgreSQL</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-20 bg-gray-50 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Key Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Financial Analytics Pipeline</h3>
-                        <p class="text-gray-600 mb-4">Built end-to-end Python/MySQL solution for automated bond valuation with real-time data updates.</p>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Python</span>
-                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">MySQL</span>
+        <main id="top">
+            <section class="hero">
+                <img class="portrait" src="Headshot.jpg" alt="Portrait of Raj Kumar Parihar">
+                <div>
+                    <p class="eyebrow">Atlanta, Georgia</p>
+                    <h1>Raj Kumar Parihar</h1>
+                    <p class="role">Data Analyst &amp; Accounting Consultant</p>
+                    <p class="lede">Data analyst and accounting consultant with 15+ years of experience working with cross-functional teams on business operations and practical solutions. I use analytics and management practice to help communities and organizations work through real problems, and I am looking for a data analytics or research role as methods change in the age of AI.</p>
+                    <div class="actions">
+                        <a class="btn btn-primary" href="#projects">View projects</a>
+                        <a class="btn btn-ghost" href="#contact">Contact</a>
                     </div>
                 </div>
+            </section>
 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Customer Segmentation Analysis</h3>
-                        <p class="text-gray-600 mb-4">Developed clustering models in Python to segment customer base, improving targeting efficiency by 35%.</p>
-                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Machine Learning</span>
-                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Analytics</span>
-                    </div>
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <article class="job">
+                        <p class="when">Aug 2024 – Present</p>
+                        <div>
+                            <h3>Data Analytics Consultant</h3>
+                            <p class="where">Open Source Fintech Inc. · Remote, project based</p>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <p class="when">Nov 2024 – Present</p>
+                        <div>
+                            <h3>Accounts Consultant</h3>
+                            <p class="where">HK Tax &amp; Accounting Inc · Decatur, GA</p>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <p class="when">Mar 2023 – Nov 2024</p>
+                        <div>
+                            <h3>Accounts &amp; Payroll Consultant</h3>
+                            <p class="where">HK Business Services LLC · Decatur, GA</p>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <p class="when">Apr 2018 – Apr 2021</p>
+                        <div>
+                            <h3>Management Consultant</h3>
+                            <p class="where">Diveprom Consultants · Vadodara, India</p>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <p class="when">Apr 2011 – Dec 2014</p>
+                        <div>
+                            <h3>HR Project Manager</h3>
+                            <p class="where">Sodexo · Luanda, Angola</p>
+                        </div>
+                    </article>
                 </div>
+            </section>
 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Automated Reporting System</h3>
-                        <p class="text-gray-600 mb-4">Created Python scripts for automated financial report generation, saving 15+ hours weekly.</p>
-                        <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Automation</span>
-                        <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Scripting</span>
-                    </div>
+            <section id="projects">
+                <h2>Projects &amp; hackathons</h2>
+                <div class="grid cards-2">
+                    <article class="card">
+                        <p class="meta">Summer 2026 · Practicum</p>
+                        <h3>Personalized Financial Insights &amp; Spend Analytics</h3>
+                        <p>Practicum sponsored by Candescent, focused on personalized financial insights and spend analytics.</p>
+                        <div class="chips"><span class="chip">Finance</span><span class="chip">Analytics</span></div>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Spring 2026 · Georgia Tech</p>
+                        <h3>Operational Forecasting of Financial Exposure</h3>
+                        <p>Class project on forecasting financial exposure from operational data.</p>
+                        <div class="chips"><span class="chip">Forecasting</span><span class="chip">Finance</span></div>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Spring 2026 · Georgia Tech</p>
+                        <h3>Market Mood and Volatility Analytics</h3>
+                        <p>Class project studying market mood and volatility for S&amp;P 500 firms.</p>
+                        <div class="chips"><span class="chip">NLP</span><span class="chip">Markets</span></div>
+                    </article>
+                    <article class="card">
+                        <p class="meta">SproutGT 2026 · Georgia Tech</p>
+                        <h3>Predictive Runway Modeling</h3>
+                        <p>Hackathon project on predictive runway modeling through peer cohort analysis.</p>
+                        <div class="chips"><span class="chip">Hackathon</span><span class="chip">Modeling</span></div>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Hacklytics 2026 · Georgia Tech</p>
+                        <h3>Peach State Health Scores</h3>
+                        <p>Hackathon project on Peach State health scores.</p>
+                        <div class="chips"><span class="chip">Hackathon</span><span class="chip">Health</span></div>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Yamaha Motors · Georgia Tech</p>
+                        <h3>YR-Blue Carbon Reduction Initiative</h3>
+                        <p>Carbon Reduction Challenge project sponsored by Yamaha Motors.</p>
+                        <div class="chips"><span class="chip">Sustainability</span><span class="chip">Sponsored</span></div>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Health AI Datathon 2026 · Emory</p>
+                        <h3>Multi-model Cancer Subtyping</h3>
+                        <p>Datathon project on cancer subtyping with multiple models.</p>
+                        <div class="chips"><span class="chip">Health AI</span><span class="chip">Emory</span></div>
+                    </article>
+                    <article class="card">
+                        <p class="meta">Summer 2026 · Georgia Tech</p>
+                        <h3>Traffic Corridor Simulation</h3>
+                        <p>Class project simulating traffic along a corridor.</p>
+                        <div class="chips"><span class="chip">Simulation</span><span class="chip">Operations</span></div>
+                    </article>
                 </div>
+            </section>
 
-            </div>
-        </div>
-    </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="grid cards-3">
+                    <article class="card">
+                        <h3>Programming &amp; analytics</h3>
+                        <ul class="skill-list">
+                            <li>Python, R, and SQL</li>
+                            <li>Advanced Excel, including VBA and pivot tables</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Machine learning &amp; NLP</h3>
+                        <ul class="skill-list">
+                            <li>Random Forest, KNN, and clustering</li>
+                            <li>FinBERT and LLM entity resolution</li>
+                            <li>Predictive analytics</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Methods</h3>
+                        <ul class="skill-list">
+                            <li>Six Sigma Green Belt</li>
+                            <li>Business process analysis</li>
+                            <li>Financial analysis and A/B testing</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
 
-    <footer id="contact" class="bg-gray-900 text-white py-12 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
-            <p class="text-gray-400 mb-8">Currently based in Stockbridge, GA. Available for Atlanta-based and remote positions.</p>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 mb-8">
-                <a href="mailto:rajkumar.parihar@gmail.com" class="text-blue-400 hover:text-white transition flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
-                    rajkumar.parihar@gmail.com
-                </a>                
-                <a href="https://linkedin.com/in/raj-kumar-parihar" target="_blank" class="text-blue-400 hover:text-white transition flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    LinkedIn
-                </a>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 text-sm text-gray-500">
-                <p>&copy; 2026 Raj Kumar Parihar. Built for GitHub Pages.</p>
-            </div>
-        </div>
-    </footer>
+            <section id="education">
+                <h2>Education</h2>
+                <div class="timeline">
+                    <article class="job">
+                        <p class="when">Dec 2026</p>
+                        <div>
+                            <h3>B.S. Computer Science</h3>
+                            <p class="where">Georgia Institute of Technology, Atlanta · GPA 3.23 / 4.0</p>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <p class="when">Jun 2016</p>
+                        <div>
+                            <h3>MBA, Human Resource Management</h3>
+                            <p class="where">Sikkim Manipal University, Gangtok, Sikkim, India</p>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <p class="when">May 2005</p>
+                        <div>
+                            <h3>B.S. Mathematics</h3>
+                            <p class="where">Maharshi Dayanand Saraswati University, Ajmer, Rajasthan, India</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
+            <section id="leadership">
+                <h2>Leadership</h2>
+                <article class="card">
+                    <p class="meta">Nov 2025 · Panelist</p>
+                    <h3>Inaugural OMSA Conference, Georgia Tech</h3>
+                    <p>Presented on advanced financial analytics and independent research on peer-based forecasting.</p>
+                </article>
+                <article class="card" style="margin-top: 1rem;">
+                    <h3>Languages &amp; interests</h3>
+                    <p>Fluent in English, Hindi, and Gujarati. Working proficiency in French and basic proficiency in Portuguese. Interested in hackathons, travel, and the places and food of different cultures.</p>
+                </article>
+            </section>
+        </main>
+
+        <footer id="contact">
+            <h2>Contact</h2>
+            <p class="lede">Open to data analytics and research roles, in Atlanta and remote.</p>
+            <div class="contact-row">
+                <a href="mailto:rajkumar.parihar@gmail.com">rajkumar.parihar@gmail.com</a>
+                <a href="tel:+14704186238">(470) 418-6238</a>
+                <a href="https://www.linkedin.com/in/raj-kumar-parihar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/rajkumarparihar" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <p class="fine">&copy; 2026 Raj Kumar Parihar</p>
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            var button = document.querySelector(".menu-btn");
+            var nav = document.getElementById("site-nav");
+            button.addEventListener("click", function () {
+                var open = nav.classList.toggle("open");
+                button.setAttribute("aria-expanded", open ? "true" : "false");
+            });
+            nav.querySelectorAll("a").forEach(function (link) {
+                link.addEventListener("click", function () {
+                    nav.classList.remove("open");
+                    button.setAttribute("aria-expanded", "false");
+                });
+            });
+
+            var canvas = document.getElementById("starfield");
+            var ctx = canvas.getContext("2d");
+            var stars = [];
+            var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            function seed() {
+                var count = Math.min(220, Math.floor(window.innerWidth / 7));
+                stars = [];
+                for (var i = 0; i < count; i++) {
+                    stars.push({
+                        x: Math.random(),
+                        y: Math.random(),
+                        r: Math.random() * 1.3 + 0.25,
+                        b: 0.35 + Math.random() * 0.65,
+                        drift: 0.00005 + Math.random() * 0.00025,
+                        phase: Math.random() * Math.PI * 2
+                    });
+                }
+            }
+
+            function paint(time) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < stars.length; i++) {
+                    var star = stars[i];
+                    if (!reduce) {
+                        star.y -= star.drift;
+                        if (star.y < 0) star.y = 1;
+                    }
+                    var twinkle = reduce ? star.b : 0.45 + Math.abs(Math.sin(time * 0.001 + star.phase)) * 0.55;
+                    ctx.fillStyle = "rgba(236, 244, 255," + (star.b * twinkle).toFixed(3) + ")";
+                    ctx.beginPath();
+                    ctx.arc(star.x * canvas.width, star.y * canvas.height, star.r, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                if (!reduce) requestAnimationFrame(paint);
+            }
+
+            resize();
+            seed();
+            paint(0);
+            window.addEventListener("resize", function () {
+                resize();
+                seed();
+                if (reduce) paint(0);
+            });
+        })();
+    </script>
 </body>
 </html>
