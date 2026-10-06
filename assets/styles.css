@@ -313,11 +313,14 @@ a:hover { color: var(--copper-deep); }
   padding: 4.5rem 6vw;
 }
 
+.section[id],
+.contact { scroll-margin-top: 5.2rem; }
+
 .section-head {
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 1rem;
-  margin-bottom: 1.8rem;
+  margin: 0 auto 1.8rem;
   max-width: var(--max);
 }
 
@@ -340,7 +343,7 @@ a:hover { color: var(--copper-deep); }
 
 .lede { margin: 0; max-width: 42rem; color: var(--muted); font-size: 1.08rem; }
 
-.lenses { max-width: var(--max); }
+.lenses { max-width: var(--max); margin-inline: auto; }
 
 .lens-input { position: absolute; opacity: 0; pointer-events: none; }
 
@@ -393,7 +396,7 @@ a:hover { color: var(--copper-deep); }
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   max-width: var(--max);
-  margin-top: 2rem;
+  margin: 2rem auto 0;
 }
 
 .principle {
@@ -413,11 +416,14 @@ a:hover { color: var(--copper-deep); }
 
 .principle p { margin: 0; color: var(--muted); }
 
+.filters { max-width: var(--max); margin-inline: auto; }
+
 .case-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   max-width: var(--max);
+  margin-inline: auto;
 }
 
 .filter-input { position: absolute; opacity: 0; pointer-events: none; }
@@ -519,6 +525,7 @@ a:hover { color: var(--copper-deep); }
   display: grid;
   gap: 0;
   max-width: var(--max);
+  margin-inline: auto;
   border-top: 1px solid var(--line-strong);
 }
 
@@ -545,6 +552,7 @@ a:hover { color: var(--copper-deep); }
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   max-width: var(--max);
+  margin-inline: auto;
 }
 
 .skill {
