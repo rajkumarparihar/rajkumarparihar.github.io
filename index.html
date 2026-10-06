@@ -256,12 +256,12 @@
         }
         .trail .card[data-step="1"] { grid-column: 1; grid-row: 1; transform: rotate(-1deg); }
         .trail .card[data-step="2"] { grid-column: 2; grid-row: 1; transform: rotate(1deg); }
-        .trail .card[data-step="3"] { grid-column: 1; grid-row: 2; transform: rotate(0.8deg); }
-        .trail .card[data-step="4"] { grid-column: 2; grid-row: 2; transform: rotate(-0.6deg); }
+        .trail .card[data-step="3"] { grid-column: 2; grid-row: 2; transform: rotate(-0.6deg); }
+        .trail .card[data-step="4"] { grid-column: 1; grid-row: 2; transform: rotate(0.8deg); }
         .trail .card[data-step="5"] { grid-column: 1; grid-row: 3; transform: rotate(-1deg); }
         .trail .card[data-step="6"] { grid-column: 2; grid-row: 3; transform: rotate(0.7deg); }
-        .trail .card[data-step="7"] { grid-column: 1; grid-row: 4; transform: rotate(0.6deg); }
-        .trail .card[data-step="8"] { grid-column: 2; grid-row: 4; transform: rotate(-0.8deg); }
+        .trail .card[data-step="7"] { grid-column: 2; grid-row: 4; transform: rotate(-0.5deg); }
+        .trail .card[data-step="8"] { grid-column: 1; grid-row: 4; transform: rotate(0.8deg); }
         .clipping { background: #f7f3e8; padding-bottom: 3.4rem; }
         .clipping blockquote {
             margin: 0.7rem 0 0.4rem;
@@ -475,17 +475,17 @@
                 </article>
                 <article class="card" data-step="3">
                     <span class="pin" aria-hidden="true"></span>
-                    <p class="exhibit">EXHIBIT 03 · SPRING 2026</p>
-                    <h3>Market Mood and Volatility Analytics</h3>
-                    <p class="meta">Class project · Georgia Tech · S&amp;P 500 firms</p>
-                    <p>Reading market mood beside volatility for large public firms.</p>
-                </article>
-                <article class="card" data-step="4">
-                    <span class="pin" aria-hidden="true"></span>
-                    <p class="exhibit">EXHIBIT 04 · SPROUTGT 2026</p>
+                    <p class="exhibit">EXHIBIT 03 · SPROUTGT 2026</p>
                     <h3>Predictive Runway Modeling</h3>
                     <p class="meta">Hackathon · Georgia Tech</p>
                     <p>Peer cohort analysis used to model runway.</p>
+                </article>
+                <article class="card" data-step="4">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 04 · SPRING 2026</p>
+                    <h3>Market Mood and Volatility Analytics</h3>
+                    <p class="meta">Class project · Georgia Tech · S&amp;P 500 firms</p>
+                    <p>Reading market mood beside volatility for large public firms.</p>
                 </article>
                 <article class="card" data-step="5">
                     <span class="pin" aria-hidden="true"></span>
@@ -506,17 +506,17 @@
                 </article>
                 <article class="card" data-step="7">
                     <span class="pin" aria-hidden="true"></span>
-                    <p class="exhibit">EXHIBIT 07 · EMORY 2026</p>
-                    <h3>Multi-model Cancer Subtyping</h3>
-                    <p class="meta">Health AI Datathon · Emory University</p>
-                    <p>Several models compared on cancer subtypes.</p>
-                </article>
-                <article class="card" data-step="8">
-                    <span class="pin" aria-hidden="true"></span>
-                    <p class="exhibit">EXHIBIT 08 · SUMMER 2026</p>
+                    <p class="exhibit">EXHIBIT 07 · SUMMER 2026</p>
                     <h3>Traffic Corridor Simulation</h3>
                     <p class="meta">Class project · Georgia Tech</p>
                     <p>A simulation of flow along a traffic corridor.</p>
+                </article>
+                <article class="card" data-step="8">
+                    <span class="pin" aria-hidden="true"></span>
+                    <p class="exhibit">EXHIBIT 08 · EMORY 2026</p>
+                    <h3>Multi-model Cancer Subtyping</h3>
+                    <p class="meta">Health AI Datathon · Emory University</p>
+                    <p>Several models compared on cancer subtypes.</p>
                 </article>
             </div>
         </section>
@@ -624,13 +624,7 @@
                 });
                 var d = "";
                 points.forEach(function (point, index) {
-                    if (index === 0) {
-                        d += "M " + point.x + " " + point.y;
-                        return;
-                    }
-                    var prev = points[index - 1];
-                    var midY = (prev.y + point.y) / 2;
-                    d += " C " + prev.x + " " + midY + ", " + point.x + " " + midY + ", " + point.x + " " + point.y;
+                    d += (index === 0 ? "M " : " L ") + point.x + " " + point.y;
                 });
                 path.setAttribute("d", d);
             }
