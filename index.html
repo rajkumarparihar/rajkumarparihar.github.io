@@ -254,8 +254,43 @@
             box-shadow: 3px 4px 0 rgba(60, 36, 12, 0.16);
             padding: 1.15rem 1rem 1rem;
         }
-        .trail .card:nth-child(odd) { transform: rotate(-1.1deg); }
-        .trail .card:nth-child(even) { transform: rotate(1deg); margin-top: 1.1rem; }
+        .trail .card[data-step="1"] { grid-column: 1; grid-row: 1; transform: rotate(-1deg); }
+        .trail .card[data-step="2"] { grid-column: 2; grid-row: 1; transform: rotate(1deg); }
+        .trail .card[data-step="3"] { grid-column: 2; grid-row: 2; transform: rotate(-0.6deg); }
+        .trail .card[data-step="4"] { grid-column: 1; grid-row: 2; transform: rotate(0.8deg); }
+        .trail .card[data-step="5"] { grid-column: 1; grid-row: 3; transform: rotate(-1deg); }
+        .trail .card[data-step="6"] { grid-column: 2; grid-row: 3; transform: rotate(0.7deg); }
+        .trail .card[data-step="7"] { grid-column: 2; grid-row: 4; transform: rotate(-0.5deg); }
+        .trail .card[data-step="8"] { grid-column: 1; grid-row: 4; transform: rotate(1deg); }
+        .clipping { background: #f7f3e8; padding-bottom: 3.4rem; }
+        .clipping blockquote {
+            margin: 0.7rem 0 0.4rem;
+            padding: 0.15rem 0 0.15rem 0.75rem;
+            border-left: 3px solid #1d4e89;
+            font-family: Caveat, cursive;
+            font-size: 1.35rem;
+            line-height: 1.15;
+        }
+        .mention {
+            position: absolute;
+            right: 0.7rem;
+            bottom: 0.7rem;
+            border: 3px solid var(--red);
+            color: var(--red);
+            padding: 0.15rem 0.35rem;
+            letter-spacing: 0.08em;
+            font-size: 0.68rem;
+            font-weight: 700;
+            transform: rotate(-8deg);
+            background: rgba(247, 243, 232, 0.85);
+        }
+        .source-link {
+            display: inline-block;
+            margin-top: 0.55rem;
+            color: var(--red);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
         .card h3 { margin: 0.35rem 0; font-size: 1.12rem; line-height: 1.25; }
         .meta { margin: 0; color: #6a5644; font-size: 0.86rem; }
         .exhibit {
@@ -311,9 +346,13 @@
         @media (max-width: 800px) {
             .topbar { align-items: flex-start; flex-direction: column; }
             .profile, .trail, .exhibits, .contact-grid, .posting, .two { grid-template-columns: 1fr; }
-            .trail .card, .tilt-left, .tilt-right { transform: none; }
-            .polaroid { transform: none; }
-            .thread { display: none; }
+            .trail .card {
+                grid-column: auto;
+                grid-row: auto;
+                transform: none;
+            }
+            .tilt-left, .tilt-right, .polaroid { transform: none; }
+            .mention { position: static; display: inline-block; margin-top: 0.7rem; }
             .sticky { position: static; display: block; transform: rotate(-2deg); margin: 0 0 0.4rem; }
             .stamp { position: static; display: inline-block; margin-top: 0.6rem; }
         }
@@ -414,62 +453,65 @@
         <section id="trail">
             <div class="folder">
                 <h2 class="tab">THE TRAIL</h2>
-                <p>PROJECTS · EACH FILE OPENED THE NEXT ONE</p>
+                <p>FOLLOW THE RED THREAD · THE NUMBERS RUN IN THAT ORDER</p>
             </div>
             <div class="trail">
-                <svg class="thread" viewBox="0 0 1000 1500" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M250 70 C 430 90, 620 180, 760 230 C 900 280, 820 470, 740 540 C 640 630, 300 760, 250 860 C 200 960, 420 1120, 760 1180 C 920 1210, 700 1400, 480 1460" fill="none" stroke="#b42318" stroke-width="4" stroke-linecap="round"/>
+                <svg class="thread" aria-hidden="true">
+                    <path fill="none" stroke="#b42318" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <article class="card">
+                <article class="card" data-step="1">
                     <span class="pin" aria-hidden="true"></span>
                     <p class="exhibit">EXHIBIT 01 · SUMMER 2026</p>
                     <h3>Personalized Financial Insights &amp; Spend Analytics</h3>
                     <p class="meta">Practicum sponsored by Candescent</p>
                     <p>A practicum on personalized financial insights and how spending actually moves.</p>
                 </article>
-                <article class="card">
+                <article class="card" data-step="2">
                     <span class="pin" aria-hidden="true"></span>
                     <p class="exhibit">EXHIBIT 02 · SPRING 2026</p>
                     <h3>Operational Forecasting of Financial Exposure</h3>
                     <p class="meta">Class project · Georgia Tech</p>
                     <p>Forecasting financial exposure from the way operations run.</p>
                 </article>
-                <article class="card">
+                <article class="card" data-step="3">
                     <span class="pin" aria-hidden="true"></span>
                     <p class="exhibit">EXHIBIT 03 · SPRING 2026</p>
                     <h3>Market Mood and Volatility Analytics</h3>
                     <p class="meta">Class project · Georgia Tech · S&amp;P 500 firms</p>
                     <p>Reading market mood beside volatility for large public firms.</p>
                 </article>
-                <article class="card">
+                <article class="card" data-step="4">
                     <span class="pin" aria-hidden="true"></span>
                     <p class="exhibit">EXHIBIT 04 · SPROUTGT 2026</p>
                     <h3>Predictive Runway Modeling</h3>
                     <p class="meta">Hackathon · Georgia Tech</p>
                     <p>Peer cohort analysis used to model runway.</p>
                 </article>
-                <article class="card">
+                <article class="card" data-step="5">
                     <span class="pin" aria-hidden="true"></span>
                     <p class="exhibit">EXHIBIT 05 · HACKLYTICS 2026</p>
                     <h3>Peach State Health Scores</h3>
                     <p class="meta">Hackathon · Georgia Tech</p>
                     <p>A health-score case built during Hacklytics.</p>
                 </article>
-                <article class="card">
+                <article class="card clipping" data-step="6">
                     <span class="pin" aria-hidden="true"></span>
-                    <p class="exhibit">EXHIBIT 06 · YAMAHA MOTORS</p>
-                    <h3>YR-Blue Carbon Reduction Initiative</h3>
-                    <p class="meta">Carbon Reduction Challenge · Georgia Tech</p>
-                    <p>Sponsored work on carbon reduction for Yamaha Motors.</p>
+                    <p class="exhibit">EXHIBIT 06 · AUGUST 2026</p>
+                    <h3>Project YR-Blue</h3>
+                    <p class="meta">Yamaha · Carbon Reduction Challenge · Georgia Institute of Technology</p>
+                    <blockquote>Assesses Yamaha’s carbon neutrality goals through marine restoration strategies that map and seed coastal seagrasses.</blockquote>
+                    <p>Honorable mention at the 2026 Final Expo. Raj Kumar Parihar, M.S. in Analytics.</p>
+                    <a class="source-link" href="https://www.scheller.gatech.edu/news/ray-c-anderson-center-for-sustainable-business/highlights-from-the-2026-carbon-reduction-challenge.html" target="_blank" rel="noopener noreferrer">Open the Georgia Tech write-up</a>
+                    <span class="mention">HONORABLE MENTION</span>
                 </article>
-                <article class="card">
+                <article class="card" data-step="7">
                     <span class="pin" aria-hidden="true"></span>
                     <p class="exhibit">EXHIBIT 07 · EMORY 2026</p>
                     <h3>Multi-model Cancer Subtyping</h3>
                     <p class="meta">Health AI Datathon · Emory University</p>
                     <p>Several models compared on cancer subtypes.</p>
                 </article>
-                <article class="card">
+                <article class="card" data-step="8">
                     <span class="pin" aria-hidden="true"></span>
                     <p class="exhibit">EXHIBIT 08 · SUMMER 2026</p>
                     <h3>Traffic Corridor Simulation</h3>
@@ -562,6 +604,41 @@
     </main>
     <footer>&copy; 2026 Raj Kumar Parihar</footer>
     <script>
+        (function () {
+            var trail = document.querySelector(".trail");
+            var path = trail.querySelector(".thread path");
+
+            function drawThread() {
+                var cards = Array.prototype.slice.call(trail.querySelectorAll(".card")).sort(function (a, b) {
+                    return Number(a.dataset.step) - Number(b.dataset.step);
+                });
+                var bounds = trail.getBoundingClientRect();
+                var svg = trail.querySelector(".thread");
+                svg.setAttribute("viewBox", "0 0 " + bounds.width + " " + bounds.height);
+                var points = cards.map(function (card) {
+                    var rect = card.getBoundingClientRect();
+                    return {
+                        x: rect.left + rect.width / 2 - bounds.left,
+                        y: rect.top + 10 - bounds.top
+                    };
+                });
+                var d = "";
+                points.forEach(function (point, index) {
+                    if (index === 0) {
+                        d += "M " + point.x + " " + point.y;
+                        return;
+                    }
+                    var prev = points[index - 1];
+                    var midY = (prev.y + point.y) / 2;
+                    d += " C " + prev.x + " " + midY + ", " + point.x + " " + midY + ", " + point.x + " " + point.y;
+                });
+                path.setAttribute("d", d);
+            }
+
+            drawThread();
+            window.addEventListener("resize", drawThread);
+        })();
+
         document.getElementById("tip-form").addEventListener("submit", function (event) {
             event.preventDefault();
             var data = new FormData(event.target);
