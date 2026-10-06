@@ -163,10 +163,11 @@
         .polaroid {
             position: relative;
             z-index: 1;
-            width: min(260px, 100%);
+            width: min(286px, 100%);
             margin-top: 0;
             background: #f7f4ee;
-            padding: 0.7rem 0.7rem 2.6rem;
+            padding: 0.7rem 0.7rem 0.55rem;
+            container-type: inline-size;
             box-shadow: 4px 5px 0 rgba(60, 36, 12, 0.2);
             transform: rotate(2.5deg);
         }
@@ -179,11 +180,20 @@
             background: #12315f;
         }
         .polaroid figcaption {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.02rem;
+            margin: 0.35rem 0 0.1rem;
             font-family: Caveat, cursive;
-            font-size: 1.45rem;
+            font-weight: 500;
             text-align: center;
-            margin-top: 0.35rem;
+            line-height: 1.05;
         }
+        .polaroid figcaption span:nth-child(1) { font-size: clamp(1.45rem, 12cqi, 1.95rem); }
+        .polaroid figcaption span:nth-child(2) { font-size: clamp(1.02rem, 8.6cqi, 1.42rem); }
+        .polaroid figcaption span:nth-child(3) { font-size: clamp(1.15rem, 10.2cqi, 1.55rem); }
         .sticky {
             position: relative;
             z-index: 2;
@@ -398,7 +408,7 @@
                 <figure class="polaroid">
                     <span class="pin" aria-hidden="true"></span>
                     <img src="portrait.jpg" alt="Raj Kumar Parihar at the Georgia Institute of Technology">
-                    <figcaption>Raj Kumar Parihar — Georgia Tech</figcaption>
+                    <figcaption><span>M.S. in Analytics</span><span>Georgia Institute of Technology</span><span>Expected December 2026</span></figcaption>
                 </figure>
             </div>
         </section>
