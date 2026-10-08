@@ -1,0 +1,5 @@
+career_fair.db*
+career_fair_1000.csv
+__pycache__/
+.pytest_cache/
+.venv/
